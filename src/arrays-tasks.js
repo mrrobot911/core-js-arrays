@@ -558,11 +558,11 @@ function propagateItemsByPositionIndex(arr) {
 function shiftArray(arr, n) {
   let result = arr.slice();
   if (n < 0) {
-    const chanc = Math.abs(n) % arr.length;
-    result = result.slice(chanc).concat(result.slice(0, chanc));
-  } else if (n > 0) {
-    const chanc = n % arr.length;
-    result = arr.slice(-chanc).concat(result.slice(0, -chanc));
+    const item = Math.abs(n) % arr.length;
+    result = result.slice(item).concat(result.slice(0, item));
+  } else {
+    const item = n % arr.length;
+    result = arr.slice(-item).concat(result.slice(0, -item));
   }
   return result;
 }
